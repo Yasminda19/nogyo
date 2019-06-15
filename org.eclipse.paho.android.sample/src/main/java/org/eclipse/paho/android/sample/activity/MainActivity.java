@@ -277,7 +277,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         actionArgs[0] = message;
         actionArgs[1] = topic;
         final ActionListener callback = new ActionListener(this, ActionListener.Action.PUBLISH, connection, actionArgs);
-        connection.getClient().publish("majuw", message.getBytes(), qos, retain, null, callback);
+        connection.getClient().publish("majuww", message.getBytes(), qos, retain, null, callback);
     }
 
     //publish mundur
@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         actionArgs[0] = message;
         actionArgs[1] = topic;
         final ActionListener callback = new ActionListener(this, ActionListener.Action.PUBLISH, connection, actionArgs);
-        connection.getClient().publish("mundurs", message.getBytes(), qos, retain, null, callback);
+        connection.getClient().publish("mundurss", message.getBytes(), qos, retain, null, callback);
     }
 
     //publish kiri
@@ -295,7 +295,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         actionArgs[0] = message;
         actionArgs[1] = topic;
         final ActionListener callback = new ActionListener(this, ActionListener.Action.PUBLISH, connection, actionArgs);
-        connection.getClient().publish("kiria", message.getBytes(), qos, retain, null, callback);
+        connection.getClient().publish("kiriaa", message.getBytes(), qos, retain, null, callback);
     }
 
     //publish kanan
@@ -304,7 +304,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         actionArgs[0] = message;
         actionArgs[1] = topic;
         final ActionListener callback = new ActionListener(this, ActionListener.Action.PUBLISH, connection, actionArgs);
-        connection.getClient().publish("kanand", message.getBytes(), qos, retain, null, callback);
+        connection.getClient().publish("kanandd", message.getBytes(), qos, retain, null, callback);
     }
     //publish diagataska
     public void publishDiagataska(Connection connection, String topic, String message, int qos, boolean retain) {

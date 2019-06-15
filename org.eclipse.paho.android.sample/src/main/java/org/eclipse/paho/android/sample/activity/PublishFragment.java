@@ -135,7 +135,7 @@ public class PublishFragment extends Fragment  {
             public void onClick(View v) {
                 i = true;
                 if(i){
-                    System.out.println("Publising: [topic: majuw message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                    System.out.println("Publising: [topic: majuww message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                             "]");
                     ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
                 }
@@ -145,6 +145,7 @@ public class PublishFragment extends Fragment  {
                     ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
                 }
         });
+                                       }
 
         //perintah mundur
         ImageView publishMundur = rootView.findViewById(R.id.publish_mundur);
@@ -154,7 +155,7 @@ public class PublishFragment extends Fragment  {
             i = true;
             if(i){
 
-                    System.out.println("Publising: [topic: mundurs message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                    System.out.println("Publising: [topic: mundurss message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                             "]");
                     ((MainActivity) getActivity()).publishMundur(connection, topic, number, selectedQos, retainValue);
                 }
@@ -165,6 +166,8 @@ public class PublishFragment extends Fragment  {
             }
         });
 
+        }
+
         //perintah kiri
         ImageView publishKiri = rootView.findViewById(R.id.publish_kiri);
         publishKiri.setOnClickListener(new View.OnClickListener() {
@@ -172,7 +175,7 @@ public class PublishFragment extends Fragment  {
             public void onClick(View v) {
                 i = true;
                 if(i){
-                    System.out.println("Publising: [topic: kiria message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                    System.out.println("Publising: [topic: kiriaa message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                             "]");
                     ((MainActivity) getActivity()).publishKiri(connection, topic, number, selectedQos, retainValue);
                 }
@@ -182,6 +185,7 @@ public class PublishFragment extends Fragment  {
                     ((MainActivity) getActivity()).publishKiri(connection, topic, number, selectedQos, retainValue);
                 }
         });
+        }
 
         //perintah kanan
         ImageView publishKanan = rootView.findViewById(R.id.publish_kanan);
@@ -190,7 +194,7 @@ public class PublishFragment extends Fragment  {
             public void onClick(View v) {
             i = true;
             if(i){
-                    System.out.println("Publising: [topic: kanand message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                    System.out.println("Publising: [topic: kanandd message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                             "]");
                     ((MainActivity) getActivity()).publishKanan(connection, topic, number, selectedQos, retainValue);
                 }
@@ -200,6 +204,7 @@ public class PublishFragment extends Fragment  {
                 ((MainActivity) getActivity()).publishKanan(connection, topic, number, selectedQos, retainValue);
             }
         });
+        }
 
         //perintah diagonal atas kanan
         ImageView publishDiagataskanan = rootView.findViewById(R.id.publish_diagataska);
@@ -218,6 +223,7 @@ public class PublishFragment extends Fragment  {
                 ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
             }
         });
+                                       }
 
         //perintah diagonal bawah kanan
         ImageView publishDiagbawahkanan = rootView.findViewById(R.id.publish_diagbawahka);
@@ -228,14 +234,15 @@ public class PublishFragment extends Fragment  {
                 if(i){
                     System.out.println("Publising: [topic: diag2 message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                             "]");
-                    ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                    ((MainActivity) getActivity()).publishDiagbawahkanan(connection, topic, number, selectedQos, retainValue);
                 }
                 else {
                     System.out.println("Publising: [topic: stopsss message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                             "]");
-                    ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                    ((MainActivity) getActivity()).publishDiagbawahkanan(connection, topic, number, selectedQos, retainValue);
                 }
         });
+                                       }
 
         //perintah diagonal atas kiri
         ImageView publishDiagataskiri = rootView.findViewById(R.id.publish_diagataski);
@@ -246,14 +253,15 @@ public class PublishFragment extends Fragment  {
 
             System.out.println("Publising: [topic: diag4 message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                     "]");
-            ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+            ((MainActivity) getActivity()).publishDiagataskiri(connection, topic, number, selectedQos, retainValue);
         }
             else {
                 System.out.println("Publising: [topic: stopsss message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                         "]");
-                ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                ((MainActivity) getActivity()).publishDiagataskiri(connection, topic, number, selectedQos, retainValue);
             }
         });
+                                       }
 
         //perintah diagonal bawah kiri
         ImageView publishDiagbawahkiri = rootView.findViewById(R.id.publish_diagbawahki);
@@ -264,15 +272,15 @@ public class PublishFragment extends Fragment  {
                 if(i){
                 System.out.println("Publising: [topic: diag3 message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                         "]");
-                ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                ((MainActivity) getActivity()).publishDiagbawahkiri(connection, topic, number, selectedQos, retainValue);
             }
                 else {
                     System.out.println("Publising: [topic: stopsss message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
                             "]");
-                    ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                    ((MainActivity) getActivity()).publishDiagbawahkiri(connection, topic, number, selectedQos, retainValue);
                 }
             });
-
+                                       }
 
 
         // set a change listener on the SeekBar, seekbar untuk mengatur servo1
@@ -358,3 +366,9 @@ public class PublishFragment extends Fragment  {
     };
 
 }
+
+
+
+
+
+
