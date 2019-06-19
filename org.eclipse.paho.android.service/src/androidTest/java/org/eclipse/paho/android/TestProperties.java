@@ -49,7 +49,7 @@ class TestProperties {
 
             // Read the properties from the property file
             if (stream != null) {
-                Log.i("TestProperties", "Loading properties from: '" + filename + "'");
+                Log.i("TestProperties","Loading properties from: '" + filename + "'");
                 properties.load(stream);
             }
         } catch (Exception e) {
@@ -76,7 +76,8 @@ class TestProperties {
 
             stream = this.context.getResources().getAssets().open(fileName);
 
-        } catch (Exception exception) {
+        }
+        catch (Exception exception) {
             Log.e("TestProperties", "Property file: '" + fileName + "' not found");
         }
 
@@ -143,7 +144,7 @@ class TestProperties {
 
     }
 
-    public int getWaitForCompletionTime() {
+    public int getWaitForCompletionTime(){
         return getIntProperty(KEY_WAIT_FOR_COMPLETION_TIME);
     }
 }

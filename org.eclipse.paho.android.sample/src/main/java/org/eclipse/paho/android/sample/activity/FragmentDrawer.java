@@ -25,12 +25,12 @@ import org.eclipse.paho.android.sample.model.NavDrawerItem;
 
 public class FragmentDrawer extends Fragment {
 
-    private final List<NavDrawerItem> data = new ArrayList<NavDrawerItem>();
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private NavigationDrawerAdapter adapter;
     private View containerView;
     private FragmentDrawerListener drawerListener;
+    private final List<NavDrawerItem> data = new ArrayList<NavDrawerItem>();
 
     public FragmentDrawer() {
 
@@ -40,18 +40,19 @@ public class FragmentDrawer extends Fragment {
         this.drawerListener = listener;
     }
 
-    public void addConnection(Connection connection) {
+    public void addConnection(Connection connection){
         System.out.println("Adding new Connection:  " + connection.getId());
         NavDrawerItem navItem = new NavDrawerItem(connection);
         data.add(navItem);
         adapter.notifyDataSetChanged();
+
     }
 
     public void updateConnection(Connection connection) {
         System.out.println("Updating Connection: " + connection.getId());
         Iterator<NavDrawerItem> iterator = data.iterator();
         int index = 0;
-        while (iterator.hasNext()) {
+        while(iterator.hasNext()) {
             NavDrawerItem item = iterator.next();
             if (item.getHandle().equals(connection.handle())) {
                 item = new NavDrawerItem(connection);
@@ -63,11 +64,11 @@ public class FragmentDrawer extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
-    public void removeConnection(Connection connection) {
+    public void removeConnection(Connection connection){
         System.out.println("Removing connection from drawer: " + connection.getId());
         Iterator<NavDrawerItem> iterator = data.iterator();
 
-        while (iterator.hasNext()) {
+        while(iterator.hasNext()) {
             NavDrawerItem item = iterator.next();
             if (item.getHandle().equals(connection.handle())) {
                 iterator.remove();
@@ -76,27 +77,31 @@ public class FragmentDrawer extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
-    public void clearConnections() {
+    public void clearConnections(){
         data.clear();
         adapter.notifyDataSetChanged();
     }
 
-    public void notifyDataSetChanged() {
+    public void notifyDataSetChanged(){
         adapter.notifyDataSetChanged();
     }
 
     private List<NavDrawerItem> getData() {
+
+
+
+
         return data;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         // Inflating view layout
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
-        RecyclerView recyclerView = layout.findViewById(R.id.drawerList);
+        RecyclerView recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
 
-        TextView addConnectionTextView = layout.findViewById(R.id.action_add_connection);
+        TextView addConnectionTextView = (TextView) layout.findViewById(R.id.action_add_connection);
 
         addConnectionTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +111,8 @@ public class FragmentDrawer extends Fragment {
             }
         });
 
-        TextView helpTextView = layout.findViewById(R.id.action_help);
+
+        TextView helpTextView = (TextView) layout.findViewById(R.id.action_help);
 
         helpTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +121,7 @@ public class FragmentDrawer extends Fragment {
                 mDrawerLayout.closeDrawer(containerView);
             }
         });
+
 
         adapter = new NavigationDrawerAdapter(getActivity(), getData());
         recyclerView.setAdapter(adapter);
@@ -168,22 +175,13 @@ public class FragmentDrawer extends Fragment {
                 mDrawerToggle.syncState();
             }
         });
+
     }
 
     public interface ClickListener {
         void onClick(int position);
 
         void onLongClick(int position);
-    }
-
-    public interface FragmentDrawerListener {
-        void onDrawerItemSelected(int position);
-
-        void onDrawerItemLongSelected(int position);
-
-        void onAddConnectionSelected();
-
-        void onHelpSelected();
     }
 
     static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
@@ -204,6 +202,7 @@ public class FragmentDrawer extends Fragment {
                     View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
                     if (child != null && clickListener != null) {
                         clickListener.onLongClick(recyclerView.getChildPosition(child));
+
                     }
                 }
             });
@@ -228,5 +227,13 @@ public class FragmentDrawer extends Fragment {
 
         }
 
+
+    }
+
+    public interface FragmentDrawerListener {
+        void onDrawerItemSelected(int position);
+        void onDrawerItemLongSelected(int position);
+        void onAddConnectionSelected();
+        void onHelpSelected();
     }
 }

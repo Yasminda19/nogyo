@@ -13,14 +13,13 @@ import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.List;
-
 import org.eclipse.paho.android.sample.R;
 import org.eclipse.paho.android.sample.model.NavDrawerItem;
 
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.MyViewHolder> {
+    private List<NavDrawerItem> data = Collections.emptyList();
     private final LayoutInflater inflater;
     private final Context context;
-    private List<NavDrawerItem> data = Collections.emptyList();
 
     public NavigationDrawerAdapter(Context context, List<NavDrawerItem> data) {
         this.context = context;
@@ -53,8 +52,8 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
-            icon = itemView.findViewById(R.id.connection_icon);
+            title = (TextView) itemView.findViewById(R.id.title);
+            icon = (ImageView) itemView.findViewById(R.id.connection_icon);
         }
     }
 }
