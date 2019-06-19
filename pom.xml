@@ -46,17 +46,6 @@
         <url>https://github.com/eclipse/paho.mqtt.android.git</url>
         <connection>scm:https://github.com/eclipse/paho.mqtt.android.git</connection>
     </scm>
-	
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <repositories>
         <repository>
