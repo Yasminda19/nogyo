@@ -4,10 +4,12 @@
             "name": "Win32",
             "includePath": [
                 "C:\\Users\\acer\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
-                "C:\\Users\\acer\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.5.0\\**"
+                "C:\\Users\\acer\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.5.0\\**",
+                "C:\\Users\\acer\\Documents\\Arduino\\libraries\\ArduinoJson\\**",
+                "C:\\Users\\acer\\Documents\\Arduino\\libraries\\Crypto-0.2.0\\**"
             ],
             "forcedInclude": [],
-            "intelliSenseMode": "msvc-x64",
+            "intelliSenseMode": "gcc-x64",
             "compilerPath": "C:\\TDM-GCC-64\\bin\\gcc.exe",
             "cStandard": "c11",
             "cppStandard": "c++17"

@@ -3,7 +3,7 @@
 void setup() {
   Serial.begin(115200);
  
-  String result = sha1(namaString);
+ String result = sha1(namaString);
 
  String namaString = ambil();
 

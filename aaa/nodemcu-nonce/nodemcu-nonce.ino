@@ -4,8 +4,8 @@
 #include <Crypto.h>
 #define KEY_LENGTH 16
 
-const char* wifiName = "Loji2";
-const char* wifiPass = "willy@s219";
+const char* wifiName = "Ayana";
+const char* wifiPass = "12345678";
 byte mac[6]; 
 String stringhmac = "";
 
@@ -50,18 +50,11 @@ for (byte i; i < SHA256HMAC_SIZE; i++)
 
  
 void loop() {
-  String stringmac = "";
-  // print macAdress
-  Serial.println();
-  WiFi.macAddress(mac);
-  for (int j=0; j < 6; j++)
-  {
-      stringmac += String(mac[j], HEX);
-  }
-   Serial.println(stringmac);
 
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());   //You can get IP address assigned to ESP
+printmacAdress();
+
+printIPAdress();
+
   //start connection
   if(WiFi.status()== WL_CONNECTED){   //Check WiFi connection status
 
@@ -85,12 +78,14 @@ void loop() {
     String hasil = obj["hasil"];
     Serial.println(hasil);
     
-    if(httpCode>0){
-    httpget();}
-    
    http.end();  //Close connection
+   
  
- }else{
+ }
+
+ 
+ 
+ else{
  
     Serial.println("Error in WiFi connection");   
  
@@ -100,7 +95,23 @@ void loop() {
  
 }
 
-void httpget(){
-    String payload = http.getString();   //Get the request response payload
-    Serial.println(payload);                     //Print the response payload
+
+void printmacAdress(){
+    
+  String stringmac = "";
+  // print macAdress
+  Serial.println();
+  WiFi.macAddress(mac);
+  for (int j=0; j < 6; j++)
+  {
+      stringmac += String(mac[j], HEX);
+  }
+   Serial.println(stringmac);
+}
+
+void printIPAdress(){
+
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());   //You can get IP address assigned to ESP
+
 }
