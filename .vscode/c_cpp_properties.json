@@ -6,7 +6,8 @@
                 "C:\\Users\\acer\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
                 "C:\\Users\\acer\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.5.0\\**",
                 "C:\\Users\\acer\\Documents\\Arduino\\libraries\\ArduinoJson\\**",
-                "C:\\Users\\acer\\Documents\\Arduino\\libraries\\Crypto-0.2.0\\**"
+                "C:\\Users\\acer\\Documents\\Arduino\\libraries\\Crypto-0.2.0\\**",
+                "C:\\Users\\acer\\Documents\\Arduino\\libraries\\Adafruit_Sensor-1.0.3"
             ],
             "forcedInclude": [],
             "intelliSenseMode": "gcc-x64",
